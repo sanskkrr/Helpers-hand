@@ -1,0 +1,104 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaint Details | ComplaintPro</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+
+
+    <main class="main-content">
+        <header class="page-header">
+            <div class="header-title">
+                <h1>Complaint <span class="text-muted">#{{ complaint.complaint_code }}</span></h1>
+                <p>Manage and update ticket details</p>
+            </div>
+            <a href="/" class="btn-back">← Back to Dashboard</a>
+        </header>
+
+        <div class="dashboard-grid">
+            <div class="column">
+                <section class="detail-card">
+                    <div class="card-header">
+                        <h3>General Information</h3>
+                        <span class="status-badge status-{{ complaint.status|lower }}">{{ complaint.status }}</span>
+                    </div>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <label>Category : {{ complaint.category }}</label>
+                            
+                        </div>
+                        <div class="info-item">
+                            <label>Priority : <span>{{ complaint.priority }}</span></label>
+                            
+                        </div>
+                        <div class="info-item">
+                            <label>Created On : {{ complaint.created_at|date:"M d, Y H:i" }}</label>
+                            
+                        </div>
+                    </div>
+                </section>
+                <br>
+
+                <section class="detail-card">
+                    <div class="card-header">
+                        <h2>Complainant Details</h2>
+                    </div>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <label>Full Name :  {{ complaint.complainant_name }}</label>
+                           
+                        </div>
+                        <div class="info-item">
+                            <label>Email Address : {{ complaint.complainant_email }}</label>
+                            <p></p>
+                        </div>
+                        <div class="info-item">
+                            <label>Phone Number : {{ complaint.complainant_phone }}</label>
+                            <p></p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="column">
+                <section class="detail-card description-card">
+                    <div class="card-header">
+                        <h3>Issue Description</h3>
+                    </div>
+                    <div class="description-content">
+                        <p>{{ complaint.description }}</p>
+                    </div>
+                </section>
+                <br>
+
+                <section class="detail-card action-card">
+                    <div class="card-header">
+                        <h3>Update Progress</h3>
+                    </div>
+                    <form method="POST" action="/complaint/{{ complaint.id }}/update-status/" class="status-form">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <select name="status" class="form-select">
+                                <option value="New" {% if complaint.status == 'New' %}selected{% endif %}>New</option>
+                                <option value="In Progress" {% if complaint.status == 'In Progress' %}selected{% endif %}>In Progress</option>
+                                <option value="Escalated" {% if complaint.status == 'Escalated' %}selected{% endif %}>Escalated</option>
+                                <option value="Resolved" {% if complaint.status == 'Resolved' %}selected{% endif %}>Resolved</option>
+                                <option value="Closed" {% if complaint.status == 'Closed' %}selected{% endif %}>Closed</option>
+                            </select>
+                            <button type="submit" class="sanskar">Update Status</button>
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </main>
+</div>
+
+</body>
+</html>

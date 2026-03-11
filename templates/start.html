@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ComplaintPro - Getting Started</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            max-width: 800px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+        
+        .section {
+            margin: 2rem 0;
+        }
+        
+        h2 {
+            color: #333;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #667eea;
+        }
+        
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+        
+        li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            margin: 1rem auto;
+            display: block;
+            width: fit-content;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .feature {
+            padding: 1.5rem;
+            background: #f8fafc;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .feature-title {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+        
+        .feature-desc {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .highlight {
+            background: #fff3cd;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #ffc107;
+            margin: 1rem 0;
+        }
+        
+        code {
+            background: #f1f5f9;
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            color: #667eea;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 2rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 ComplaintPro</h1>
+        <p class="subtitle">Professional Complaint Management System</p>
+        
+        <div class="section">
+            <h2>Welcome!</h2>
+            <p>ComplaintPro is a comprehensive complaint management system designed to help you register, track, escalate, and resolve complaints efficiently with complete status transparency.</p>
+        </div>
+        
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">📊</div>
+                <div class="feature-title">Dashboard</div>
+                <div class="feature-desc">Real-time stats and analytics</div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📝</div>
+                <div class="feature-title">Register</div>
+                <div class="feature-desc">Submit new complaints</div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🔍</div>
+                <div class="feature-title">Track</div>
+                <div class="feature-desc">Monitor complaint status</div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">⚠️</div>
+                <div class="feature-title">Escalate</div>
+                <div class="feature-desc">Auto & manual escalation</div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Quick Start</h2>
+            <ul>
+                <li>Click the button below to launch the application</li>
+                <li>The app comes pre-loaded with 25 sample complaints</li>
+                <li>All data is stored locally in your browser</li>
+                <li>No installation or server required</li>
+                <li>Works completely offline</li>
+            </ul>
+        </div>
+        
+        <div class="highlight">
+            <strong>💡 Pro Tip:</strong> Try registering a new complaint and tracking it by ID to see the full workflow in action!
+        </div>
+        
+        <a href="index.html" class="btn">🚀 Launch ComplaintPro</a>
+        
+        <div class="section">
+            <h2>Key Features</h2>
+            <ul>
+                <li><strong>Dashboard:</strong> View real-time statistics and charts</li>
+                <li><strong>Register Complaints:</strong> Easy-to-use form with validation</li>
+                <li><strong>Track by ID or Email:</strong> Dual search functionality</li>
+                <li><strong>Advanced Filtering:</strong> Filter by status, priority, category, date</li>
+                <li><strong>Bulk Actions:</strong> Update, escalate, or delete multiple complaints</li>
+                <li><strong>Auto-Escalation:</strong> Configurable time-based escalation</li>
+                <li><strong>Resolution Center:</strong> Mark as resolved with ratings</li>
+                <li><strong>Analytics:</strong> Detailed performance metrics and reports</li>
+                <li><strong>Admin Panel:</strong> Manage agents and assignments</li>
+                <li><strong>Export Data:</strong> Download complaints as CSV</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>System Requirements</h2>
+            <ul>
+                <li>Modern web browser (Chrome, Firefox, Safari, Edge)</li>
+                <li>JavaScript enabled</li>
+                <li>LocalStorage support</li>
+                <li>Screen resolution: 320px and above</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>Sample Data</h2>
+            <p>The system includes:</p>
+            <ul>
+                <li>25 sample complaints with realistic data</li>
+                <li>6 support agents with roles and departments</li>
+                <li>Various complaint categories and priorities</li>
+                <li>Complete complaint histories and timelines</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>Need Help?</h2>
+            <p>For detailed documentation, feature guides, and customization instructions, please refer to the <code>README.md</code> file included in the project.</p>
+        </div>
+        
+        <div style="text-align: center; margin-top: 3rem; color: #666; font-size: 0.9rem;">
+            <p>Built with ❤️ for efficient complaint management</p>
+            <p style="margin-top: 0.5rem;">Version 1.0.0 - Production Ready</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<h1>Track Complaint</h1>
+
+{% if complaint %}
+    <p><strong>ID:</strong> {{ complaint.id }}</p>
+    <p><strong>Name:</strong> {{ complaint.complainant_name }}</p>
+    <p><strong>Status:</strong> {{ complaint.status }}</p>
+    <p><strong>Category:</strong> {{ complaint.category }}</p>
+{% else %}
+    <p>No complaint found.</p>
+{% endif %}
+
+<a href="/">Back to Dashboard</a>

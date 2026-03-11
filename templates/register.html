@@ -1,0 +1,121 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Register | Helper's Hand</title>
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<style>
+.register-card{
+background:white;
+padding:50px;
+border-radius:16px;
+width:600px;
+box-shadow:0 20px 50px rgba(0,0,0,0.2);
+}
+
+.form-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:14px;
+}
+
+.form-grid input{
+width:100%;
+padding:12px;
+border-radius:8px;
+border:1px solid #ddd;
+font-size:14px;
+}
+
+.form-grid input:focus{
+outline:none;
+border-color:#667eea;
+}
+
+.full{
+grid-column:span 2;
+}
+
+.register-btn{
+margin-top:20px;
+width:100%;
+padding:12px;
+border:none;
+border-radius:8px;
+background:#667eea;
+color:white;
+font-weight:600;
+font-size:15px;
+cursor:pointer;
+}
+
+.register-btn:hover{
+background:#5a67d8;
+}
+</style>
+
+</head>
+
+<body class="login-page">
+
+<div class="login-wrapper">
+
+<div class="register-card">
+
+<img src="{% static 'images/logo.png' %}" class="login-logo">
+
+<h2 class="portal-name">Helper's Hand</h2>
+
+<form method="POST" action="{% url 'register' %}">
+{% csrf_token %}
+
+<div class="form-grid">
+
+<input type="text" name="first_name" placeholder="First Name" required>
+
+<input type="text" name="last_name" placeholder="Last Name" required>
+<input type="text" name="username" placeholder="Username" required>
+
+<input type="email" name="email" placeholder="Email address" required>
+
+<input type="password" name="password" placeholder="Password" required>
+
+<input type="tel" placeholder="Phone number">
+
+<input class="full" type="text" placeholder="Street Address">
+
+<input type="text" placeholder="City">
+
+<input type="text" placeholder="State">
+
+<input type="text" placeholder="Locality / Area">
+
+<input type="text" placeholder="Postal Code">
+
+</div>
+
+<button type="submit" class="register-btn">Create Account</button>
+
+</form>
+
+<p style="margin-top:18px;font-size:14px;">
+Already have an account?
+<a href="{% url 'login' %}">Login</a>
+</p>
+
+</div>
+
+<p class="login-footer">
+Helper's Hand • Complaint Management Portal
+</p>
+
+</div>
+
+</body>
+</html>
