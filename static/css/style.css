@@ -2375,6 +2375,43 @@ width:auto;
 object-fit:contain;
 border-radius: 14px;
 }
+/* Dark theme */
+body.dark-mode {
+    background-color: #121212;
+    color: #e4e4e4;
+}
+
+body.dark-mode .card,
+body.dark-mode .dashboard-card,
+body.dark-mode .login-card {
+    background-color: #1e1e1e;
+    color: #e4e4e4;
+}
+
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode textarea {
+    background-color: #2a2a2a;
+    color: #e4e4e4;
+    border: 1px solid #444;
+}
+
+body.dark-mode table {
+    background-color: #1e1e1e;
+}
+
+body.dark-mode th,
+body.dark-mode td {
+    border-color: #333;
+}
+#themeToggle {
+    border: none;
+    background: #4f46e5;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+}
 
 .login-error {
     background: #ffe5e5;

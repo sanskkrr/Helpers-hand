@@ -68,6 +68,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <i class="fas fa-users-cog"></i>
                 <span>Admin Panel</span>
             </a>
+            
         </nav>
 
         <div class="sidebar-footer">
@@ -82,6 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <form method="post" action="{% url 'logout' %}" onsubmit="return confirmLogout()">
 {% csrf_token %}
 <button class="btn btn-outline sanskar2" type="submit">Logout</button>
+
 </form>
        
     </aside>

@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from .models import Complaint
 from django.shortcuts import render, get_object_or_404
 from django.contrib.auth.decorators import login_required
-
+@login_required
 def register_complaint(request):
     if request.method == "POST":
         name = request.POST.get("complainantName")
@@ -109,6 +109,7 @@ def update_status(request, id):
 
     return redirect(f"/complaint/{id}/")
 
+@login_required
 def track_complaint(request):
 
     query = request.GET.get("q")
