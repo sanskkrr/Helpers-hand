@@ -30,10 +30,10 @@ def register_complaint(request):
     return render(request, "index.html")
 
 
-from .models import Complaint
 
-from django.shortcuts import render
-from .models import Complaint
+
+
+
 
 from django.db.models import Q
 
@@ -43,26 +43,7 @@ from django.db.models import Q
 @login_required
 def home(request):
 
-    query = request.GET.get("q")
-    status_filter = request.GET.get("status")
-    priority_filter = request.GET.get("priority")
-
-    complaints = Complaint.objects.all()
-
-    if query:
-        complaints = complaints.filter(
-            Q(complainant_name__icontains=query) |
-            Q(category__icontains=query) |
-            Q(priority__icontains=query) |
-            Q(status__icontains=query) |
-            Q(description__icontains=query)
-        )
-
-    if status_filter:
-        complaints = complaints.filter(status=status_filter)
-
-    if priority_filter:
-        complaints = complaints.filter(priority=priority_filter)
+    complaints = Complaint.objects.all().order_by("-id")
 
     stats = {
         "total": complaints.count(),
@@ -84,8 +65,7 @@ def home(request):
     return render(request, "index.html", {
         "complaints": complaints,
         "stats": stats,
-        "chart_data": chart_data,
-        "query": query
+        "chart_data": chart_data
     })
 
 def update_status(request, id):
